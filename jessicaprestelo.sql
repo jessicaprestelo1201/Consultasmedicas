@@ -55,6 +55,33 @@ INSERT INTO Consultas (consulta_id, paciente_id, medico_id, data_consulta) VALUE
 
 
 
+Consultas de cada Join:
+
+Pacientes que já tiveram consultas realizadas:
+SELECT Pacientes.nome AS nome_paciente, Medicos.nome AS nome_medico, Consultas.data_consulta, Medicos.especialidade
+FROM Consultas
+JOIN Pacientes ON Consultas.paciente_id = Pacientes.paciente_id
+JOIN Medicos ON Consultas.medico_id = Medicos.medico_id;
+
+LEFT JOIN:
+
+Todos os pacientes que não realizaram nenhuma consulta:
+
+SELECT Pacientes.nome AS nome_paciente, Consultas.data_consulta, Medicos.nome AS nome_medico
+FROM Pacientes
+LEFT JOIN Consultas ON Pacientes.paciente_id = Consultas.paciente_id
+LEFT JOIN Medicos ON Consultas.medico_id = Medicos.medico_id;
+
+
+Médicos que ainda não realizaram nenhuma consulta:
+
+SELECT Medicos.nome AS nome_medico, Medicos.especialidade
+FROM Medicos
+LEFT JOIN Consultas ON Medicos.medico_id = Consultas.medico_id
+WHERE Consultas.consulta_id IS NULL;
+
+
+
 
 
 
