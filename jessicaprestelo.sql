@@ -30,3 +30,35 @@ CREATE TABLE Consultas (
 
 
 
+Insert's:
+
+Pacientes:
+
+INSERT INTO Pacientes (paciente_id, nome, data_nascimento, telefone) VALUES
+(1,'Gisele Prestelo', '1985-04-20', '11987654321'),
+(2,'Givanildo Jesus', '1990-01-15', '11912345678'),
+(3,'Laurinda Cruz', '1978-10-05', '11987651234');
+
+Medicos:
+
+INSERT INTO Medicos (medico_id,nome, especialidade, telefone) VALUES
+(1,'Dr. Patricia Alves', 'Cardiologia', '11911223344'),
+(2,'Dra. Fernanda souza', 'Pediatria', '11922334455'),
+(3,'Dr. Durvalina Eloi', 'Ortopedia', '11933445566');
+
+Consultas:
+
+INSERT INTO Consultas (consulta_id, paciente_id, medico_id, data_consulta) VALUES
+(1,1, 1, '2024-10-20'),
+(2,2, 1, '2024-10-22'),
+(3,1, 2, '2024-11-01');
+
+
+
+
+
+
+
+
+
+
